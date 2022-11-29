@@ -17,8 +17,6 @@ Line.prototype.paint = function (ctx) {
 Drawing.prototype.paint = function (ctx) {
     ctx.fillStyle = '#F0F0F0'; // set canvas' background color
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    this.getForms().forEach(function (eltDuTableau) {
-        // now fill the canvas
-        eltDuTableau.paint(ctx);
-    });
-};
+    this.shapeArray.forEach(e => e.paint(ctx));
+}
+
